@@ -1,0 +1,19 @@
+<div class="headline">
+  <h1>I Am The Article Index </h1>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    <% @articles.each do |entry|%>
+      <tr>
+        <td><%=entry.title%></td>
+        <td><%=entry.description%></td>
+        <td><%=link_to "Edit", edit_article_path(entry)%></td>
+        <td><%=link_to "Show", article_path(entry)%></td>
+      </tr>
+    <% end%>
+  </table>
+  <p><%=link_to "New Article", new_article_path%></p>
+  <p><%=link_to "Home", root_path%></p>
+</div>
