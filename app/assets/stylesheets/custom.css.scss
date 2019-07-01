@@ -1,4 +1,59 @@
-$navbar-default-bg: #7FBDC7;
+$navbar-default-bg: #00307a;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  //   letter-spacing: -1px;
+  //   font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url("ocean_wallpaper.jpg");
+  height: 550px;
+  //   background-size: cover;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.btn-lg {
+  font-size: 1.7em;
+  background-color: black;
+}
+
+footer {
+//   margin-top: 45px;
+//   padding-top: 5px;
+  border-top: 1px solid black;
+  color: #00307a;
+}
+
+footer a:hover {
+  color: black;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
