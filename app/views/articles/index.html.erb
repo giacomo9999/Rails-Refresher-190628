@@ -1,20 +1,21 @@
-<div class="headline">
-  <h1>I Am The Article Index </h1>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-    <% @articles.each do |entry|%>
-      <tr>
-        <td><%=entry.title%></td>
-        <td><%=entry.description%></td>
-        <td><%=link_to "Edit", edit_article_path(entry)%></td>
-        <td><%=link_to "Show", article_path(entry)%></td>
-        <td><%=link_to "Delete", article_path(entry), method: :delete, data:{confirm: "Are you sure?"}%></td>
-      </tr>
-    <% end%>
-  </table>
-  <p><%=link_to "New Article", new_article_path%></p>
-  <p><%=link_to "Home", root_path%></p>
-</div>
+<h1 align="center">Index of Articles</h1>
+<% @articles.each do |entry|%>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="well well-lg">
+        <div class="article-title">
+          <%=link_to entry.title, article_path(entry)%>
+        </div>
+        <div class="article-body">
+          <%=truncate(entry.description, length:100)%>
+        </div>
+        <div class="article-actions">
+          <%=link_to "Edit", edit_article_path(entry), class:"btn btn-xs btn-primary"%>
+          <%=link_to "Delete", article_path(entry), method: :delete, data:{confirm: "Are you sure you want to delete?"}, class:"btn btn-xs btn-danger"%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end%>
+<p><%=link_to "New Article", new_article_path%></p>
+<p><%=link_to "Home", root_path%></p>
